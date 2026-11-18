@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <!-- Важно для мобильных: запрет масштабирования -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Мой Питомец</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Убираем прокрутку */
+      background-color: #87CEEB; /* Небесно-голубой фон */
+      touch-action: none; /* Отключаем стандартные жесты браузера */
+    }
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      /* Важно: отключает выделение и зум по двойному тапу на Android */
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
