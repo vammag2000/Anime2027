@@ -2,28 +2,38 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <!-- Важно для мобильных: запрет масштабирования -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Мой Питомец</title>
   <style>
     html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden; /* Убираем прокрутку */
-      background-color: #87CEEB; /* Небесно-голубой фон */
-      touch-action: none; /* Отключаем стандартные жесты браузера */
+      margin: 0; padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #87CEEB; /* фон сцены — можно поставить картинку */
+      touch-action: none;
+      -webkit-tap-highlight-color: transparent;
     }
-    canvas {
-      display: block;
+    #stage {
+      position: relative;
       width: 100vw;
       height: 100vh;
-      /* Важно: отключает выделение и зум по двойному тапу на Android */
-      -webkit-tap-highlight-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #character {
+      /* размер персонажа — подгоните под свои видео */
+      height: 60vh;
+      width: auto;
+      background: transparent;
+      pointer-events: auto;
     }
   </style>
 </head>
 <body>
-  <canvas id="gameCanvas"></canvas>
+  <div id="stage">
+    <video id="character" autoplay loop muted playsinline></video>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
